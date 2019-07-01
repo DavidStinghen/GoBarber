@@ -5,6 +5,9 @@
   "repository": "https://github.com/DavidStinghen/GoBarber.git",
   "author": "DavidNatanael <davidstinghen@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
