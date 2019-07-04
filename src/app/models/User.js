@@ -20,7 +20,7 @@ class User extends Model {
       }
     );
 
-    // hook to create a hash of password in password_hash before save
+    // hook to create a hash of password in password_hash before save when store
     this.addHook('beforeSave', async user => {
       if (user.password) {
         user.password_hash = await bcrypt.hash(user.password, 8);
@@ -28,6 +28,11 @@ class User extends Model {
     });
 
     return this;
+  }
+
+  // method to verify if login's password is equal password in DB
+  checkPassword(password) {
+    return bcrypt.compare(password, this.password_hash);
   }
 }
 
