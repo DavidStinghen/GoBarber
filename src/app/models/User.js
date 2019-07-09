@@ -33,7 +33,7 @@ class User extends Model {
   // method to create association between file and user model
   static associate(models) {
     // collumn avatar_id belongs to file model
-    this.belongsTo(models.File, { foreignKey: 'avatar_id' });
+    this.belongsTo(models.File, { foreignKey: 'avatar_id', as: 'avatar' });
   }
 
   // method to verify if login's password is equal password in DB
