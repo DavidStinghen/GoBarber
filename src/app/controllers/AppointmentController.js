@@ -1,9 +1,11 @@
 import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore } from 'date-fns';
+import { startOfHour, parseISO, isBefore, format } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 
 import Appointment from '../models/Appointment';
 import User from '../models/User';
 import File from '../models/File';
+import Notification from '../schemas/Notification';
 
 class AppointmentController {
   /**
@@ -12,6 +14,7 @@ class AppointmentController {
    * check provider id
    * check date
    * check availability
+   * notify a provider of a new appointment
    */
   async store(req, res) {
     // data for validation
@@ -31,9 +34,16 @@ class AppointmentController {
       where: { id: provider_id, provider: true }
     });
     if (!isProvider) {
-      return res.status(401).json({
-        error: 'You can only create appointments with providers'
-      });
+      return res
+        .status(401)
+        .json({ error: 'You can only create appointments with providers' });
+    }
+
+    // Check if user and provider are the same
+    if (req.userId === provider_id) {
+      return res
+        .status(401)
+        .json({ error: 'You cannot create appointment to yourself' });
     }
 
     // check for past dates
@@ -54,18 +64,33 @@ class AppointmentController {
       return res.status(401).json({ error: 'Appointment date is not available'});
     }
 
-
     // if all is ok, store a new appointment
     const appointment = await Appointment.create({
       user_id: req.userId,
       provider_id,
       date,
     });
+
+    // notify a provider about a new appointment
+    const user = await User.findByPk(req.userId);
+    // date format
+    const formattedDate = format(
+      hourStart,
+      "'dia' dd 'de' MMMM', às' H:mm'h'",
+      { locale: pt }
+    );
+    // create a notification
+    await Notification.create({
+      content: `Novo agendamento de ${user.name} para ${formattedDate}`,
+      user: provider_id,
+    });
+
     return res.json(appointment);
   }
 
   /**
    * method to list all appointments
+   * limit of page
    */
   async index(req, res) {
     // query for limit number of appointments in page
