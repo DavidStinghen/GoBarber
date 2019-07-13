@@ -32,6 +32,8 @@ routes.get('/providers', ProviderController.index);
 routes.post('/appointments', AppointmentController.store);
 // route to list all appointments
 routes.get('/appointments', AppointmentController.index);
+// route to delete appointments
+routes.delete('/appointments/:id', AppointmentController.delete);
 
 // route to notify provider about a new appointment
 routes.get('/notifications', NotificationController.index);
