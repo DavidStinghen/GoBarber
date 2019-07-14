@@ -10,6 +10,7 @@ import ProviderController from './app/controllers/ProviderController';
 import AppointmentController from './app/controllers/AppointmentController';
 import ScheduleController from './app/controllers/ScheduleController';
 import NotificationController from './app/controllers/NotificationController';
+import AvailableController from './app/controllers/AvailableController';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -27,6 +28,8 @@ routes.put('/users', UserController.update);
 
 // route to index all providers
 routes.get('/providers', ProviderController.index);
+// route to list available hours
+routes.get('/providers/:providerId/available', AvailableController.index);
 
 // route to create a new appointment
 routes.post('/appointments', AppointmentController.store);
