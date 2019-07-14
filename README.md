@@ -117,7 +117,7 @@ Return:
   "canceled_at": null
 }
 ```
-***You can see more exemples of usage inporting [insomniaTestExamples](https://raw.githubusercontent.com/DavidStinghen/GoBarber/Insomnia_2019-07-14.json) to your Insomnia workspace***
+***You can see more exemples of usage inporting [insomniaTestExamples](https://raw.githubusercontent.com/DavidStinghen/GoBarber/master/Insomnia_2019-07-14.json 'Insomnia config') to your Insomnia workspace***
 
 ### Thanks to
 
