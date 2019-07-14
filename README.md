@@ -2,7 +2,7 @@
 
  Project developed in Rocketseat GoStack Bootcamp. The application developed is an app for barbershops and their clients called   GoBarber.
  
- ##Abouot GoBarber
+ ## Abouot GoBarber
  
  As mentioned previously, GoBarber is an application for scheduling barber schedules. It is possible to register users as well as service providers. In its development, the PostgreSQL databases were used for data that needed structure, MongoDB for data that did not require structured structuring and also Redis for the control and sending of mails. Jwt authentication was used. The same has several functionalities as:
  
@@ -16,11 +16,11 @@
 - List the schedules that a service provider has on a given day.
  
  
- ##Pre-Install
+ ## Pre-Install
  
  Before you use this application, you need to install a postgreSQL database, Redis and MongoDB. I strongly recommend you use docker.
  
- ##Installation
+ ## Installation
  
 - Clone this with git clone https://github.com/DavidStinghen/GoBarber.git;
 - Run yarn to install node dependencies;
@@ -29,9 +29,9 @@
 - Launch yarn dev to run API;
 - Launch yarn queue, to run Bee-Queue.
 
-##Examples of what GoBarber can do
+## Examples of what GoBarber can do
 
-###Create a new user
+### Create a new user
 
 You can create a new user by adding name, mail, and password.
 
@@ -59,7 +59,7 @@ Return:
 }
 ```
 
-###Create a session
+### Create a session
 
 you can start a session using the email and password used in the registration, the session will generate a token for the authorizations required to use the application.
 
@@ -88,7 +88,7 @@ Return:
 }
 ```
 
-###Create a new appointment
+### Create a new appointment
 
 For the user to create a new appointment the same must be logged as also to choose the provider and the date / time of the appointment. When the user creates the appointment the provider will receive a notification of a new appointment created as the user name and date / time this appointment will also be visible in the provider's schedule.
 
@@ -117,8 +117,8 @@ Return:
   "canceled_at": null
 }
 ```
-***You can see more exemples of usage in [examples]()
+***You can see more exemples of usage inporting [examples](https://github.com/DavidStinghen/GoBarber/blob/master/Insomnia_2019-07-14.json) to your Insomnia workspace***
 
-###Thanks to
+### Thanks to
 
 [Rocketseat](https://rocketseat.com.br/)
