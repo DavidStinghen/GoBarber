@@ -1,6 +1,6 @@
 # GoBarber
 
- Project developed in Rocketseat GoStack Bootcamp. The application developed is an app for barbershops and their clients called   GoBarber.
+ Project developed in Rocketseat :rocket: GoStack Bootcamp. The application developed is an app for barbershops and their clients called   GoBarber.
  
  ## About GoBarber
  
@@ -117,7 +117,7 @@ Return:
   "canceled_at": null
 }
 ```
-***You can see more exemples of usage inporting [insomniaTestExamples](https://raw.githubusercontent.com/DavidStinghen/GoBarber/master/Insomnia_2019-07-14.json 'Insomnia config') to your Insomnia workspace***
+***You can see more exemples of usage inporting [insomniaTestExamples](https://raw.githubusercontent.com/DavidStinghen/GoBarber/master/insomniaTestExamples.json 'Insomnia config') to your Insomnia workspace***
 
 ### Thanks to
 
