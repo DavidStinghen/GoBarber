@@ -1,12 +1,12 @@
 export default {
   // nodemailer config, using mailtrap in dev
   // when in prod, use Amazon SES
-  host: 'smtp.mailtrap.io',
-  port: 2525,
+  host: process.env.MAIL_HOST,
+  port: process.env.MAIL_PORT,
   secure: false,
   auth: {
-    user: 'fd730d947d3bf9',
-    pass: 'f16365ac888295',
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   },
   default: {
     from: 'Equipe GoBarber <noreply@gobarber.com>',
