@@ -2,7 +2,7 @@
 
  Project developed in Rocketseat GoStack Bootcamp. The application developed is an app for barbershops and their clients called   GoBarber.
  
- ## Abouot GoBarber
+ ## About GoBarber
  
  As mentioned previously, GoBarber is an application for scheduling barber schedules. It is possible to register users as well as service providers. In its development, the PostgreSQL databases were used for data that needed structure, MongoDB for data that did not require structured structuring and also Redis for the control and sending of mails. Jwt authentication was used. The same has several functionalities as:
  
@@ -117,7 +117,7 @@ Return:
   "canceled_at": null
 }
 ```
-***You can see more exemples of usage inporting [examples](https://github.com/DavidStinghen/GoBarber/blob/master/Insomnia_2019-07-14.json) to your Insomnia workspace***
+***You can see more exemples of usage inporting [insomniaTestExamples](https://raw.githubusercontent.com/DavidStinghen/GoBarber/blob/master/Insomnia_2019-07-14.json) to your Insomnia workspace***
 
 ### Thanks to
 
