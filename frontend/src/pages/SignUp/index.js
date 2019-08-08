@@ -1,9 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
-import logo from '~/assets/logo.svg';
+import { signUpRequest } from '../../store/modules/auth/actions';
+import logo from '../../assets/logo.svg';
 
 const schema = Yup.object().shape({
   name: Yup.string().required('Você deve informar seu nome'),
@@ -16,8 +18,10 @@ const schema = Yup.object().shape({
 });
 
 export default function SignUp() {
-  function handleSubmit(data) {
-    console.tron.log(data);
+  const dispatch = useDispatch();
+
+  function handleSubmit({ name, email, password }) {
+    dispatch(signUpRequest(name, email, password));
   }
 
   return (
@@ -25,7 +29,7 @@ export default function SignUp() {
       <img src={logo} alt="GoBarber" />
 
       <Form schema={schema} onSubmit={handleSubmit}>
-        <Input name="name" placeholder="InForme seu nome completo" />
+        <Input name="name" placeholder="Informe seu nome completo" />
         <Input name="email" type="email" placeholder="Informe seu e-mail" />
         <Input
           name="password"
