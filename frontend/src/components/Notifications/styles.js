@@ -20,7 +20,7 @@ export const Badge = styled.button`
         top: 0;
         width: 8px;
         height: 8px;
-        background: #f22;
+        background: #f64c75;
         content: '';
         border-radius: 50%;
       }
@@ -92,7 +92,7 @@ export const Notification = styled.div`
         display: inline-block;
         width: 8px;
         height: 8px;
-        background: #f22;
+        background: #f64c75;
         border-radius: 50%;
       }
     `}
