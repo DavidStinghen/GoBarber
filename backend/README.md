@@ -22,7 +22,7 @@
  
  ## Installation
  
-- Clone this with git clone https://github.com/DavidStinghen/GoBarber.git;
+- Clone this with git clone https://github.com/DavidStinghen/GoBarber/backend.git;
 - Run yarn to install node dependencies;
 - Configure .env file like .env.example, using your own credentials;
 - Run yarn sequelize db:migrate;
@@ -117,7 +117,7 @@ Return:
   "canceled_at": null
 }
 ```
-***You can see more exemples of usage inporting [insomniaTestExamples](https://raw.githubusercontent.com/DavidStinghen/GoBarber/master/insomniaTestExamples.json 'Insomnia config') to your Insomnia workspace***
+***You can see more exemples of usage inporting [insomniaTestExamples](https://raw.githubusercontent.com/DavidStinghen/GoBarber/backend/master/insomniaTestExamples.json 'Insomnia config') to your Insomnia workspace***
 
 ### Thanks to
 
